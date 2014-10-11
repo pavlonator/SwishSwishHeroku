@@ -30,7 +30,7 @@ limitations under the License.
 <!doctype html>
 <%
   String userId = AuthUtil.getUserId(request);
-  String appBaseUrl = WebUtil.buildUrl(request, "/voice-blogger/");
+  String appBaseUrl = WebUtil.buildUrl(request, "/");
 
   Credential credential = AuthUtil.getCredential(userId);
 
@@ -127,7 +127,7 @@ limitations under the License.
             <tr>
               <td colspan="2">
                 <form class="form-inline"
-                      action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>"
+                      action="<%= WebUtil.buildUrl(request, "/main") %>"
                       method="post">
                   <input type="hidden" name="itemId"
                          value="<%= timelineItem.getId() %>">
@@ -166,7 +166,7 @@ limitations under the License.
         <a href="https://developers.google.com/glass/timeline">here</a>.</p>
 
 
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertItem">
         <textarea class="span4" name="message">Hello World!</textarea><br/>
         <button class="btn btn-block" type="submit">
@@ -174,7 +174,7 @@ limitations under the License.
         </button>
       </form>
 
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertItem">
         <input type="hidden" name="message" value="Chipotle says 'hi'!">
         <input type="hidden" name="imageUrl" value="<%= appBaseUrl +
@@ -186,18 +186,18 @@ limitations under the License.
                "static/images/chipotle-tube-640x360.jpg" %>">
         </button>
       </form>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertPaginatedItem">
         <button class="btn btn-block" type="submit">
           Insert a card with long paginated HTML</button>
       </form>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertItemWithAction">
         <button class="btn btn-block" type="submit">
           Insert a card you can reply to</button>
       </form>
       <hr>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertItemAllUsers">
         <button class="btn btn-block" type="submit">
           Insert a card to all users</button>
@@ -212,7 +212,7 @@ limitations under the License.
         <a href="https://developers.google.com/glass/contacts">here</a>.</p>
 
       <% if (contact == null) { %>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertContact">
         <input type="hidden" name="iconUrl" value="<%= appBaseUrl +
                "static/images/chipotle-tube-640x360.jpg" %>">
@@ -225,7 +225,7 @@ limitations under the License.
         </button>
       </form>
       <% } else { %>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="deleteContact">
         <input type="hidden" name="id" value="<%= MainServlet.CONTACT_ID %>">
         <button class="btn btn-block btn-danger" type="submit">
@@ -253,7 +253,7 @@ limitations under the License.
         not work on localhost.</p>
 
       <% if (timelineSubscriptionExists) { %>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>"
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>"
             method="post">
         <input type="hidden" name="subscriptionId" value="timeline">
         <input type="hidden" name="operation" value="deleteSubscription">
@@ -262,7 +262,7 @@ limitations under the License.
         </button>
       </form>
       <% } else { %>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertSubscription">
         <input type="hidden" name="collection" value="timeline">
         <button class="btn btn-block btn-success" type="submit">
@@ -272,7 +272,7 @@ limitations under the License.
       <% } %>
 
       <% if (locationSubscriptionExists) { %>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>"
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>"
             method="post">
         <input type="hidden" name="subscriptionId" value="locations">
         <input type="hidden" name="operation" value="deleteSubscription">
@@ -281,7 +281,7 @@ limitations under the License.
         </button>
       </form>
       <% } else { %>
-      <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+      <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
         <input type="hidden" name="operation" value="insertSubscription">
         <input type="hidden" name="collection" value="locations">
         <button class="btn btn-block btn-success" type="submit">
@@ -303,7 +303,7 @@ limitations under the License.
           }
           %>
 
-          <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+          <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
               <input type="hidden" name="operation" value="listBlogs">
               <button class="btn btn-block btn-success" type="submit">
                   List blogs for current user
@@ -313,7 +313,7 @@ limitations under the License.
       </div>
 
       <div class="span4">
-          <form action="<%= WebUtil.buildUrl(request, "/voice-blogger/main") %>" method="post">
+          <form action="<%= WebUtil.buildUrl(request, "/main") %>" method="post">
               <input type="hidden" name="operation" value="insertBloggPost">
               <textarea class="span4" name="message">Hello Blogger!</textarea><br/>
               <button class="btn btn-block btn-success" type="submit">
