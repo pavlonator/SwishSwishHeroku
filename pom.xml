@@ -41,33 +41,6 @@
             <version>1.17.0-rc</version>
         </dependency>
 
-        <!-- Jetty plugin dependencies -->
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty</artifactId>
-            <version>6.1.14</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-util</artifactId>
-            <version>6.1.14</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jetty-plus</artifactId>
-            <version>6.1.14</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-2.1</artifactId>
-            <version>6.1.14</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mortbay.jetty</groupId>
-            <artifactId>jsp-api-2.1</artifactId>
-            <version>6.1.14</version>
-        </dependency>
-
         <!-- everything else -->
         <dependency>
             <groupId>org.apache.commons</groupId>
