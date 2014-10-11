@@ -2,14 +2,14 @@ package com.uno;
 
 import java.io.IOException;
 import java.io.File;
-//import org.apache.catalina.startup.Tomcat;
+import org.apache.catalina.startup.Tomcat;
 
 
 public class Main {
 
   public static void main(String[] args) throws Exception{
         String webappDirLocation = "src/main/webapp/";
-        /*
+        
         Tomcat tomcat = new Tomcat();
 
         //The port that we should run on can be set into an environment variable
@@ -25,6 +25,6 @@ public class Main {
         System.out.println("configuring app with basedir: " + new File("./" + webappDirLocation).getAbsolutePath());
 
         tomcat.start();
-        tomcat.getServer().await();*/
+        tomcat.getServer().await();
   }
 }
