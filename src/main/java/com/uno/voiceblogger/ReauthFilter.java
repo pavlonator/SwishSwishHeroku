@@ -54,7 +54,7 @@ public class ReauthFilter implements Filter {
       } catch (TokenResponseException e) {
         if (e.getDetails().getError().contains("invalid_grant")) {
           LOG.warning("User disabled Glassware. Attempting to re-authenticate");
-          httpResponse.sendRedirect(WebUtil.buildUrl(httpRequest, "/oauth2callback"));
+          httpResponse.sendRedirect(WebUtil.buildUrl(httpRequest, "/voice-blogger/oauth2callback"));
         }
       }
     }

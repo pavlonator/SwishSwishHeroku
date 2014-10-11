@@ -25,6 +25,7 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Collections;
@@ -54,16 +55,7 @@ public class AuthUtil {
    * Creates and returns a new {@link AuthorizationCodeFlow} for this app.
    */
   public static AuthorizationCodeFlow newAuthorizationCodeFlow() throws IOException {
-    URL resource = AuthUtil.class.getResource("/oauth.properties");
-    File propertiesFile = new File("./src/main/resources/oauth.properties");
-    try {
-      propertiesFile = new File(resource.toURI());
-      //LOG.info("Able to find oauth properties from file.");
-    } catch (URISyntaxException e) {
-      LOG.info(e.toString());
-      LOG.info("Using default source path.");
-    }
-    FileInputStream authPropertiesStream = new FileInputStream(propertiesFile);
+    InputStream authPropertiesStream = AuthorizationCodeFlow.class.getResourceAsStream("/oauth.properties");
     Properties authProperties = new Properties();
     authProperties.load(authPropertiesStream);
 

@@ -295,11 +295,11 @@ public class MainServlet extends HttpServlet {
     private String handleInsertSubscription(HttpServletRequest req, String userId, Credential credential) throws IOException {
         String message;// subscribe (only works deployed to production)
         try {
-          MirrorClient.insertSubscription(credential, WebUtil.buildUrl(req, "/notify"), userId,
+          MirrorClient.insertSubscription(credential, WebUtil.buildUrl(req, "/voice-blogger/notify"), userId,
                   req.getParameter("collection"));
           message = "Application is now subscribed to updates.";
         } catch (GoogleJsonResponseException e) {
-          LOG.warning("Could not subscribe " + WebUtil.buildUrl(req, "/notify") + " because "
+          LOG.warning("Could not subscribe " + WebUtil.buildUrl(req, "/voice-blogger/notify") + " because "
               + e.getDetails().toPrettyString());
           message = "Failed to subscribe. Check your log for details";
         }

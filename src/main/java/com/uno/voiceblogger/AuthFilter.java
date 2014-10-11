@@ -43,9 +43,9 @@ public class AuthFilter implements Filter {
       HttpServletResponse httpResponse = (HttpServletResponse) response;
 
       // skip auth for static content, middle of auth flow, notify servlet
-      if (httpRequest.getRequestURI().startsWith("/static") ||
-          httpRequest.getRequestURI().equals("/oauth2callback") ||
-          httpRequest.getRequestURI().equals("/notify")) {
+      if (httpRequest.getRequestURI().startsWith("/voice-blogger/static") ||
+          httpRequest.getRequestURI().equals("/voice-blogger/oauth2callback") ||
+          httpRequest.getRequestURI().equals("/voice-blogger/notify")) {
         LOG.info("Skipping auth check during auth flow");
         filterChain.doFilter(request, response);
         return;
@@ -56,7 +56,7 @@ public class AuthFilter implements Filter {
           || AuthUtil.getCredential(AuthUtil.getUserId(httpRequest)) == null
           || AuthUtil.getCredential(AuthUtil.getUserId(httpRequest)).getAccessToken() == null) {
         // redirect to auth flow
-        httpResponse.sendRedirect(WebUtil.buildUrl(httpRequest, "/oauth2callback"));
+        httpResponse.sendRedirect(WebUtil.buildUrl(httpRequest, "/voice-blogger/oauth2callback"));
         return;
       }
 

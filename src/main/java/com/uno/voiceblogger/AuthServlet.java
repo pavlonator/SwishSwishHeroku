@@ -52,7 +52,7 @@ public class AuthServlet extends HttpServlet {
       AuthorizationCodeFlow flow = AuthUtil.newAuthorizationCodeFlow();
       TokenResponse tokenResponse =
           flow.newTokenRequest(req.getParameter("code"))
-              .setRedirectUri(WebUtil.buildUrl(req, "/oauth2callback")).execute();
+              .setRedirectUri(WebUtil.buildUrl(req, "/voice-blogger/oauth2callback")).execute();
 
       // Extract the Google User ID from the ID token in the auth response
       String userId = ((GoogleTokenResponse) tokenResponse).parseIdToken().getPayload().getUserId();
@@ -67,7 +67,7 @@ public class AuthServlet extends HttpServlet {
       NewUserBootstrapper.bootstrapNewUser(req, userId);
 
       // Redirect back to index
-      res.sendRedirect(WebUtil.buildUrl(req, "/"));
+      res.sendRedirect(WebUtil.buildUrl(req, "/voice-blogger/"));
       return;
     }
 
@@ -76,7 +76,7 @@ public class AuthServlet extends HttpServlet {
 
     AuthorizationCodeFlow flow = AuthUtil.newAuthorizationCodeFlow();
     GenericUrl url =
-        flow.newAuthorizationUrl().setRedirectUri(WebUtil.buildUrl(req, "/oauth2callback"));
+        flow.newAuthorizationUrl().setRedirectUri(WebUtil.buildUrl(req, "/voice-blogger/oauth2callback"));
     url.set("approval_prompt", "force");
     res.sendRedirect(url.build());
   }
