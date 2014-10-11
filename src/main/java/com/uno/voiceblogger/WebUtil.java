@@ -30,7 +30,7 @@ public class WebUtil {
   public static String buildUrl(HttpServletRequest req, String relativePath) {
     GenericUrl url = new GenericUrl(req.getRequestURL().toString());
     url.setRawPath(relativePath);
-    return url.build();
+    return url.build().replace("http://", "https://");
   }
 
   /**
