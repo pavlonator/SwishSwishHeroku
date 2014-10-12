@@ -46,6 +46,7 @@ public class AuthFilter implements Filter {
       if (httpRequest.getRequestURI().startsWith("/static") ||
           httpRequest.getRequestURI().equals("/oauth2callback") ||
           httpRequest.getRequestURI().equals("/salesforce") ||
+          httpRequest.getRequestURI().equals("/notify2")||
           httpRequest.getRequestURI().equals("/notify")) {
         LOG.info("Skipping auth check during auth flow");
         filterChain.doFilter(request, response);

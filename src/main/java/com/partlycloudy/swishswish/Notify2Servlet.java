@@ -84,8 +84,8 @@ public class Notify2Servlet extends HttpServlet {
 				String respJson = interract(urlParameters, requestUrl,
 						contentType);
 
-				int begin = respJson.indexOf("access_token");
-				int end = respJson.indexOf('\"', begin) + 15;
+				int begin = respJson.indexOf("access_token") + 15;
+				int end = respJson.indexOf('\"', begin);
 				accessToken = respJson.substring(begin, end);
 			}
 			System.out.println(accessToken);
