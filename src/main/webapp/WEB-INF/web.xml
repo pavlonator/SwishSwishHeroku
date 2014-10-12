@@ -88,6 +88,6 @@ limitations under the License.
   </servlet-mapping>
 
   <welcome-file-list>
-    <welcome-file>static/partlycloudy/swishSwish.html</welcome-file>
+    <welcome-file>swishSwish.html</welcome-file>
   </welcome-file-list>
 </web-app>
