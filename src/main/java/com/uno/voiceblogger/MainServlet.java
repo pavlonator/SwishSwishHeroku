@@ -74,15 +74,10 @@ public class MainServlet extends HttpServlet {
 
   private static final String PAGINATED_HTML =
       "<article class='auto-paginate'>"
-      + "<h2 class='blue text-large'>Did you know...?</h2>"
-      + "<p>Cats are <em class='yellow'>solar-powered.</em> The time they spend napping in "
-      + "direct sunlight is necessary to regenerate their internal batteries. Cats that do not "
-      + "receive sufficient charge may exhibit the following symptoms: lethargy, "
-      + "irritability, and disdainful glares. Cats will reactivate on their own automatically "
-      + "after a complete charge cycle; it is recommended that they be left undisturbed during "
-      + "this process to maximize your enjoyment of your cat.</p><br/><p>"
-      + "For more cat maintenance tips, tap to view the website!</p>"
-      + "</article>";
+      + "  <figure><img src=\"https://blooming-journey-3117.herokuapp.com/static/images/photo.jpg\"></figure><section>"
+      + "<h2 class='blue text-large'>Oil change discount!</h2>"
+      + "<p>The HiffyLyube on <em class='yellow'>corner of Market and 4-th street</em> has 20% discount until the end of this month."
+      + "</section></article>";
 
   /**
    * Do stuff when buttons on index.jsp are clicked
