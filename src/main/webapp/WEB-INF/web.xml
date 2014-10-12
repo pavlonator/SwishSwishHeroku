@@ -69,6 +69,16 @@ limitations under the License.
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>salesforce</servlet-name>
+    <servlet-class>com.partlycloudy.swishswish.SalesForceInputServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>salesforce</servlet-name>
+    <url-pattern>/salesforce</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
     <servlet-name>attachmentproxy</servlet-name>
     <servlet-class>com.partlycloudy.swishswish.AttachmentProxyServlet</servlet-class>
   </servlet>
