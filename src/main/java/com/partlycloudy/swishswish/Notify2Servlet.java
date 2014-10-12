@@ -83,7 +83,7 @@ public class Notify2Servlet extends HttpServlet {
 				String contentType = "application/x-www-form-urlencoded";
 				String respJson = interract(urlParameters, requestUrl,
 						contentType);
-
+				response.getWriter().write("respJson:"+respJson);
 				int begin = respJson.indexOf("access_token") + 15;
 				int end = respJson.indexOf('\"', begin);
 				accessToken = respJson.substring(begin, end);
