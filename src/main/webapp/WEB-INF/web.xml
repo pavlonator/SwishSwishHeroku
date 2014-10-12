@@ -79,6 +79,18 @@ limitations under the License.
 
 
   <servlet>
+    <servlet-name>dealAlertFromGlass</servlet-name>
+    <servlet-class>com.partlycloudy.swishswish.DealAlertFromGlassServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>dealAlertFromGlass</servlet-name>
+    <url-pattern>/dealAlertFromGlass</url-pattern>
+  </servlet-mapping>
+  
+  
+
+
+  <servlet>
     <servlet-name>salesforce</servlet-name>
     <servlet-class>com.partlycloudy.swishswish.SalesForceInputServlet</servlet-class>
   </servlet>
