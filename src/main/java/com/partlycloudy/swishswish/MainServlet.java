@@ -115,7 +115,7 @@ public class MainServlet extends HttpServlet {
         message = handleOther(req);
     }
     WebUtil.setFlash(req, message);
-    res.sendRedirect(WebUtil.buildUrl(req, "/voice-blogger"));
+    res.sendRedirect(WebUtil.buildUrl(req, "/admin.jsp"));
   }
 
     private String handleListBlogs(HttpServletRequest req, Credential credential) {
