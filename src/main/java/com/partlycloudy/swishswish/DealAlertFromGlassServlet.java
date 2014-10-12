@@ -110,7 +110,7 @@ public class DealAlertFromGlassServlet  extends HttpServlet {
 		connection.setRequestProperty("Content-Type",
 				contentType);
 		if(authorization!=null){
-			connection.setRequestProperty("Authorization", "authorization");
+			connection.setRequestProperty("Authorization", authorization);
 		}
 		connection.setRequestProperty("charset", "utf-8");
 		connection.setRequestProperty("Content-Length",
