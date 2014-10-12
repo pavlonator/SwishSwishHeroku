@@ -40,7 +40,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Handles POST requests from index.jsp
+ * Handles POST requests from admin.jsp
  *
  * @author Jenny Murphy - http://google.com/+JennyMurphy
  */
@@ -80,7 +80,7 @@ public class MainServlet extends HttpServlet {
       + "</section></article>";
 
   /**
-   * Do stuff when buttons on index.jsp are clicked
+   * Do stuff when buttons on admin.jsp are clicked
    */
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
