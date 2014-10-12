@@ -77,7 +77,6 @@ public class Notify2Servlet extends HttpServlet {
 			// url
 			// https://login.salesforce.com/services/oauth2/token?client_id=3MVG9xOCXq4ID1uEhB4bY6EMA35p31pb76VNjO_2lEqnD8P05DDyfPJgcqtSbiv_DqXzK5YeTEQVye2wAncwM&client_secret=493891164069775110&grant_type=password&username=pavlonator@partlycloudy.com&password=puxnY3321_sf
 			if (accessToken == null) {
-
 				String urlParameters = "client_id=3MVG9xOCXq4ID1uEhB4bY6EMA35p31pb76VNjO_2lEqnD8P05DDyfPJgcqtSbiv_DqXzK5YeTEQVye2wAncwM&client_secret=493891164069775110&grant_type=password&username=pavlonator@partlycloudy.com&password=puxnY3321_sf";
 				String requestUrl = "https://login.salesforce.com/services/oauth2/token";
 				String contentType = "application/x-www-form-urlencoded";
@@ -89,7 +88,9 @@ public class Notify2Servlet extends HttpServlet {
 				accessToken = respJson.substring(begin, end);
 			}
 			System.out.println(accessToken);
-			response.getWriter().write("accessToken:"+accessToken);
+			response.getWriter().write("accessToken:"+accessToken + " ");
+			
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
